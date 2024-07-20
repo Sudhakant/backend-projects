@@ -1,1 +1,5 @@
 # backend-projects
+
+```
+npm install
+```

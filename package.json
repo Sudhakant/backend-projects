@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:01": "node 01-Basic-Express-Server/index.js",
     "start:02": "node 02-Basic-NodeJs-Server/app.js",
-    "start:03": "node 03-Express-Mongo-Server/app.js"
+    "start:03": "node 03-Basic-REST-API-MongoDB/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2"
   }
 }
