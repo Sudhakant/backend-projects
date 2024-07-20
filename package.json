@@ -1,0 +1,23 @@
+{
+  "name": "backend-projects",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:01": "node 01-Basic-Express-Server/index.js",
+    "start:02": "node 02-Basic-NodeJs-Server/app.js",
+    "start:03": "node 03-Express-Mongo-Server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:Sudhakant/backend-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
