@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:01": "node 01-Basic-Express-Server/index.js",
-    "start:02": "node 02-Basic-NodeJs-Server/app.js",
-    "start:03": "node 03-Basic-REST-API-MongoDB/app.js"
+    "start:01": "sh ./node_modules/.bin/nodemon 01-Basic-Express-Server/index.js",
+    "start:02": "sh ./node_modules/.bin/nodemon 02-Basic-NodeJs-Server/app.js",
+    "start:03": "sh ./node_modules/.bin/nodemon 03-Basic-REST-API-MongoDB/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,10 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }

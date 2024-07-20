@@ -3,3 +3,6 @@
 ```
 npm install
 ```
+
+# Environment Variables
+PORT
