@@ -12,26 +12,14 @@ mongoose.connect(uri)
 });
 
 
+app.use(express.json());
 
-// Establish Database Connection
-// const MongoClient = require('mongodb').MongoClient;
-// const url = 'mongodb://localhost:27017';
-
-// MongoClient.connect(url, (err, client) => {
-//     if(err) {
-//         console.log(err);
-//     } else {
-//         console.log('Database Connected');
-//     }
-// });
-
-
-
-
+const subscribersRouter = require('./routes/subscribers');
+app.use('/subscribers', subscribersRouter);
 
 app.get('/', (req, res) => {
-    
-    // res.send('Hello World!');
+
+    res.send('Hello World!');
 })
 
 
