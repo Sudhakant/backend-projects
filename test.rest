@@ -1,0 +1,19 @@
+GET http://localhost:3000/subscribers
+
+###
+
+GET http://localhost:3000/subscribers/669cce421aae8a5a98ddd835
+
+###
+
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "name": "Amazing Person",
+    "subscribedToChannel": "tales_from_cosmos"
+}
+
+###
+
+DELETE http://localhost:3000/subscribers/669cce421aae8a5a98ddd835
