@@ -14,4 +14,10 @@ mongoose.connect(uri)
 
 app.use(express.json());
 
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    res.render('.\\04-URL-Shortener-MongoDB\\views\\index');
+})
+
 app.listen(PORT, () => console.log(`Server is Listening on PORT ${PORT}`));
