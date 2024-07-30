@@ -62,3 +62,13 @@ textarea {
 .logo:hover {
     text-decoration: underline;
 }
+
+.buttons {
+    display: flex;
+    margin-top: .5rem;
+    justify-content: center;
+}
+
+.buttons > * + * {
+    margin-left: .25rem;
+}
