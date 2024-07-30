@@ -9,7 +9,8 @@
     "start:01": "sh ./node_modules/.bin/nodemon 01-Basic-Express-Server/index.js",
     "start:02": "sh ./node_modules/.bin/nodemon 02-Basic-NodeJs-Server/app.js",
     "start:03": "sh ./node_modules/.bin/nodemon 03-Basic-REST-API-MongoDB/app.js",
-    "start:04": "sh ./node_modules/.bin/nodemon 04-URL-Shortener-MongoDB/server.js"
+    "start:04": "sh ./node_modules/.bin/nodemon 04-URL-Shortener-MongoDB/server.js",
+    "start:05": "sh ./node_modules/.bin/nodemon 05-Hastebin-Clone-MongoDB/server.js"
   },
   "repository": {
     "type": "git",
