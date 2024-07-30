@@ -17,3 +17,9 @@ pre {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.line-numbers {
+    color: #7D7D7D;
+    font-family: monospace;
+    text-align: end;
+}
