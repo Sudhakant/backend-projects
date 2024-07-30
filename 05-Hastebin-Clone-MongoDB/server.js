@@ -43,6 +43,18 @@ app.post('/save', async (req, res) => {
         console.log(error);
         res.render('new', {value});
     }
-})
+});
+
+app.get('/:id', async (req, res) => {
+    const {id} = req.params;
+    try {
+        const document = await Document.findById(id);
+        res.render('code-display', {code: document.value});
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+   
+});
 
 app.listen(PORT, () => console.log(`Server is Listening on PORT ${PORT}`));
