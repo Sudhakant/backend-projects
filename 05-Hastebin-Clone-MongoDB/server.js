@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const {DB_URL, PORT} = require('../core/environment/index');
+const Document = require('./models/document');
 const mongoose = require('mongoose');
 
 const uri = DB_URL;
@@ -31,10 +32,17 @@ app.get('/new', (req, res) => {
     res.render('new');
 });
 
-app.post('/save', (req, res) => {
+app.post('/save', async (req, res) => {
     const {value} = req.body;
-    console.log(value)
+    // console.log(value);
     // res.render('code-display', {code: value});
+    try {
+        const document = await Document.create({value});
+        res.redirect(`/${document._id}`);
+    } catch (error) {
+        console.log(error);
+        res.render('new', {value});
+    }
 })
 
 app.listen(PORT, () => console.log(`Server is Listening on PORT ${PORT}`));
