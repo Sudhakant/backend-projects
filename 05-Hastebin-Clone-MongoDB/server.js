@@ -1,7 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const {PORT} = require('../core/environment/index');
+const {DB_URL, PORT} = require('../core/environment/index');
+const mongoose = require('mongoose');
+
+const uri = DB_URL;
+mongoose.connect(uri)
+.then(() => {
+    console.log('Database Connected');
+}).catch((err) => {
+    console.log(err);
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
