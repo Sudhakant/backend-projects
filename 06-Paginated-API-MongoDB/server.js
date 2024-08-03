@@ -1,7 +1,16 @@
 const express = require('express');
 const app = express();
 const {PORT, DB_URL} = require('../core/environment/index');
-const { models } = require('mongoose');
+
+const mongoose = require('mongoose');
+const User = require('./models/users');
+
+mongoose.connect(DB_URL)
+.then(() => {
+    console.log('Database Connected');
+}).catch((err) => {
+    console.log(err);
+});
 
 const users = [
     {id: 1, name: 'User 1'},
