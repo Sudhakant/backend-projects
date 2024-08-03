@@ -42,7 +42,7 @@ app.get('/users', paginatedResults(User), (req, res)=>{
 });
 
 function paginatedResults(model){
-    return (req, res, next) => {
+    return async (req, res, next) => {
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
 
@@ -51,7 +51,7 @@ function paginatedResults(model){
 
         const results = {};
 
-        if(endIndex < model.length){
+        if(endIndex < await model.countDocuments().exec()){
             results.next = {
                 page: page + 1,
                 limit
@@ -65,11 +65,15 @@ function paginatedResults(model){
             }
         }
         
-        results.results = model.slice(startIndex, endIndex);
+        try{
+            results.results = await model.find().limit(limit).skip(startIndex).exec();
+            // res.json(results);
+            res.paginatedResults = results;
+            next();
+        }  catch(error){
+            res.status(500).json({message: error.message});
+        }
         
-        // res.json(results);
-        res.paginatedResults = results;
-        next();
     }
 }
 
