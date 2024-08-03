@@ -27,14 +27,18 @@ app.get('/users', (req, res)=>{
 
     const results = {};
 
-    results.next = {
-        page: page + 1,
-        limit
+    if(endIndex < users.length){
+        results.next = {
+            page: page + 1,
+            limit
+        }
     }
 
-    results.previous = {
-        page: page - 1,
-        limit
+    if(startIndex > 0){
+        results.previous = {
+            page: page - 1,
+            limit
+        }
     }
     
     results.results = users.slice(startIndex, endIndex);
