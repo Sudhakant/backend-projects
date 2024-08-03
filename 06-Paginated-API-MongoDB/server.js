@@ -37,7 +37,13 @@ const posts = [
 
 app.get('/users', paginatedResults(users), (req, res)=>{
     const results = res.paginatedResults;
-        
+
+    res.json(results);
+});
+
+app.get('/posts', paginatedResults(posts), (req, res)=>{
+    const results = res.paginatedResults;
+
     res.json(results);
 });
 
