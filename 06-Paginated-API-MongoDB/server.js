@@ -19,7 +19,15 @@ const users = [
 ]
 
 app.get('/users', (req, res)=>{
-    res.json(users);
+    const page = req.query.page || 1;
+    const limit = req.query.limit || 10;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+    
+    const resultUsers = users.slice(startIndex, endIndex);
+    
+    res.json(resultUsers);
 })
 
 
